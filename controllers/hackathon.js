@@ -1,5 +1,6 @@
 //require("../utils/Proptypes")();
 const models = require("../models");
+const randomColor = require('../utils/randomColor');
 
 String.prototype.replaceAll = function(search, replacement) {
     var target = this;
@@ -19,12 +20,10 @@ exports.find = (req,res) => {
 
 exports.create = (req,res) => {
 
-    console.log(req.body.userId);
-
     let hackathon = new models.Hackathon({
         place: req.body.place,
-        type:req.body.type,
-        invite:req.body.invite,
+        type:req.body.type.split(","),
+        invite:req.body.invite.split(","),
         title:req.body.title,
         titleLink:req.body.title.replaceAll(' ','-').toLowerCase(),
         address:req.body.address,
@@ -46,6 +45,7 @@ exports.create = (req,res) => {
 
 exports.update = (req,res) => {
     let hackathon = new models.Hackathon({
+        _id:req.params.id,
         place:req.body.place,
         type:req.body.type,
         invite:req.body.invite,
@@ -58,7 +58,10 @@ exports.update = (req,res) => {
         shedule:req.body.shedule,
         userId:req.body.userId,
         public:req.body.public,
-        _id:req.params.id
+        banner:req.body.banner,
+        photoPerfil:'https://ui-avatars.com/api/?size=1024&background='+randomColor()+'&color=fff&name='+req.body.title.charAt(0),
+        administrators:{type:Array,required:true}
+
     });
 
     models.Hackathon.update({_id:req.params.id},hackathon,(err,response) => {
@@ -131,8 +134,6 @@ exports.findPublish = (req,res) => {
         }
     })
 };
-/*
-exports.virtuals = (req,res) => {
-    models.Hackathon.find({type: })
-}
-*/
+
+
+//console.log(req.hostname);
