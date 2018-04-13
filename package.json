@@ -1,0 +1,26 @@
+{
+  "name": "hackathon.io",
+  "version": "0.0.1",
+  "description": "Web service Hackathon.io",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Luis vilches Abarca",
+  "license": "ISC",
+  "dependencies": {
+    "connect-multiparty": "^2.1.0",
+    "cors": "^2.8.4",
+    "express": "^4.16.3",
+    "helmet": "^3.12.0",
+    "jwt-simple": "^0.5.1",
+    "moment": "^2.22.0",
+    "mongoose": "^5.0.13",
+    "mongoose-bcrypt": "^1.5.0",
+    "mongoose-timestamp": "^0.6.0",
+    "mongoose-unique-validator": "^2.0.0",
+    "morgan": "^1.9.0",
+    "passport": "^0.4.0",
+    "passport-local": "^1.0.0"
+  }
+}
