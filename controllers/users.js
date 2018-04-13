@@ -17,7 +17,7 @@ exports.createUser = (req,res) => {
 
 exports.user = (req,res) => {
     Model.User.findById({_id:req.params.id}, (err,response) => {
-        if(err) throw (res.json({success: false}))
+        if(err) throw (res.json({success: false}));
         res.status(200).json(response);
     })
 };

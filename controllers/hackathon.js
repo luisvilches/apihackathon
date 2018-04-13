@@ -131,3 +131,8 @@ exports.findPublish = (req,res) => {
         }
     })
 };
+/*
+exports.virtuals = (req,res) => {
+    models.Hackathon.find({type: })
+}
+*/
