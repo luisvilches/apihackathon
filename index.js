@@ -21,7 +21,7 @@ app.disable('x-powered-by');
 app.use(morgan('combined'));
 app.use(express.static(path.join(path.resolve(),'public/',config.SERVER.media_url)));
 app.use(express.static(path.join(path.resolve(),'public/',config.SERVER.static_url)));
-app.use("/",routes);
+app.use("/",body,routes);
 app.use("/auth",auth.auth,body,routesPrivates);
 
 mongoose.connect(utils.db.connectionString(config.DATABASE.default))
