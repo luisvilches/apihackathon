@@ -1,6 +1,7 @@
 //require("../utils/Proptypes")();
 const models = require("../models");
 const randomColor = require('../utils/randomColor');
+const uploadfile = require('../utils/fileupload');
 
 String.prototype.replaceAll = function(search, replacement) {
     var target = this;
@@ -32,6 +33,7 @@ exports.create = (req,res) => {
         overvies:req.body.overvies,
         shedule:req.body.shedule,
         userId:req.body.userId,
+        photoPerfil:'https://ui-avatars.com/api/?size=1024&background='+randomColor()+'&color=fff&name='+req.body.title.charAt(0),
         public:false
     });
     hackathon.save((err,response) => {
@@ -200,13 +202,25 @@ exports.addPrizes = (req,res) => {
 };
 
 exports.updatePhoto = (req,res) => {
-    models.Hackathon.findOneAndUpdate({ _id: req.params.id }, { $set: { photoPerfil: req.body.photo } }, { new: true }, (err, response) => {
+    var host;
+    if( req.hostname === 'localhost'){
+        host = 'http://localhost:1989';
+    } else {
+        host = 'http://'+req.hostname;
+    }
+    models.Hackathon.findOneAndUpdate({ _id: req.params.id }, { $set: { photoPerfil: host + '/' + uploadfile(req.files.photoPerfil,'hackathon_') } }, { new: true }, (err, response) => {
         if(err) throw res.status(500).json({success:false});
         res.status(200).json({success:true,data:response});
     });
 };
 
 exports.updateBanner = (req,res) => {
+    var host;
+    if( req.hostname === 'localhost'){
+        host = 'http://localhost:1989';
+    } else {
+        host = 'http://'+req.hostname;
+    }
     models.Hackathon.findOneAndUpdate({ _id: req.params.id }, { $set: { banner: req.body.photo } }, { new: true }, (err, response) => {
         if(err) throw res.status(500).json({success:false});
         res.status(200).json({success:true,data:response});
