@@ -58,7 +58,7 @@ exports.setAvatar = (req,res) => {
     if( req.hostname === 'localhost'){
         host = 'http://localhost:1989';
     } else {
-        host = req.hostname;
+        host = 'http://'+req.hostname;
     }
     Model.User.findOneAndUpdate({ _id: req.params.id }, { $set: {
             avatar: host + '/' + uploadfile(req.files.avatar,'avatar_'),
