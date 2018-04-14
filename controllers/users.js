@@ -1,5 +1,14 @@
 const Model = require('../models');
 const randomColor = require('../utils/randomColor');
+const uploadfile = require('../utils/fileupload');
+
+String.prototype.replaceAll = function(search, replacement) {
+    var target = this;
+    return target.replace(new RegExp(search, 'g'), replacement);
+};
+
+
+
 exports.createUser = (req,res) => {
     let user = new Model.User({
         name: req.body.name,
@@ -21,3 +30,41 @@ exports.user = (req,res) => {
         res.status(200).json(response);
     })
 };
+
+
+exports.updateInfoProfile = (req,res) => {
+    Model.User.findOneAndUpdate({ _id: req.params.id }, { $set: {
+            name: req.body.name,
+            username: req.body.username.replaceAll(' ','-').toLowerCase(),
+            location: req.body.location,
+            description: req.body.description
+        } }, { new: true }, (err, response) => {
+        if(err) throw res.status(500).json({success:false});
+        res.status(200).json({success:true,data:response});
+    });
+};
+
+exports.setPassword = (req,res) => {
+    Model.User.findOneAndUpdate({ _id: req.params.id }, { $set: {
+            password: req.body.password,
+        } }, { new: true }, (err, response) => {
+        if(err) throw res.status(500).json({success:false});
+        res.status(200).json({success:true,data:response});
+    });
+};
+
+exports.setAvatar = (req,res) => {
+    var host;
+    if( req.hostname === 'localhost'){
+        host = 'http://localhost:1989';
+    } else {
+        host = req.hostname;
+    }
+    Model.User.findOneAndUpdate({ _id: req.params.id }, { $set: {
+            avatar: host + '/' + uploadfile(req.files.avatar,'avatar_'),
+        } }, { new: true }, (err, response) => {
+        if(err) throw res.status(500).json({success:false});
+        res.status(200).json({success:true,data:response});
+    });
+};
+

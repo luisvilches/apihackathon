@@ -3,6 +3,7 @@ const moment = require('moment');
 const config = require('../settings');
 
 exports.auth = (req,res,next) => {
+    console.log("AUTH",req.headers.authorization)
     if (!req.headers.authorization) {
         return res.status(403).send({message: 'Error de auntenticación'})
     }
