@@ -136,4 +136,95 @@ exports.findPublish = (req,res) => {
 };
 
 
-//console.log(req.hostname);
+//console.log();
+
+
+exports.addTypes = (req,res) => {
+    models.Hackathon.findOneAndUpdate({_id: req.params.id}, {$push: {type: req.body.types}},(err,response) => {
+        if(err) throw res.status(500).json({success:false});
+        res.status(200).json({success:true,data:response});
+    });
+};
+
+exports.addHackers = (req,res) => {
+    models.Hackathon.findOneAndUpdate({_id: req.params.id}, {$push: {hakers: req.body.haker}},(err,response) => {
+        if(err) throw res.status(500).json({success:false});
+        res.status(200).json({success:true,data:response});
+    });
+};
+
+exports.addAdmin = (req,res) => {
+    models.Hackathon.findOneAndUpdate({_id: req.params.id}, {$push: {administrators: req.body.admin}},(err,response) => {
+        if(err) throw res.status(500).json({success:false});
+        res.status(200).json({success:true,data:response});
+    });
+};
+
+exports.addJudges = (req,res) => {
+    models.Hackathon.findOneAndUpdate({_id: req.params.id}, {$push: {judges:{
+        userId:req.body.userId,
+        name:req.body.name,
+        job:req.body.job
+    }}}, (err, response) => {
+        if(err) throw res.status(500).json({success:false});
+        res.status(200).json({success:true,data:response});
+    });
+};
+
+exports.addPatnerts = (req,res) => {
+    models.Hackathon.findOneAndUpdate({_id: req.params.id}, {$push: {patnerts: req.body.patnert}},(err,response) => {
+        if(err) throw res.status(500).json({success:false});
+        res.status(200).json({success:true,data:response});
+    });
+};
+
+exports.addChallenge = (req,res) => {
+    models.Hackathon.findOneAndUpdate({_id: req.params.id}, {$push: {challenge: {
+        title:req.body.title,
+        content:req.body.content
+    }}},(err,response) => {
+        if(err) throw res.status(500).json({success:false});
+        res.status(200).json({success:true,data:response});
+    });
+};
+
+exports.addPrizes = (req,res) => {
+    models.Hackathon.findOneAndUpdate({_id: req.params.id}, {$push: {challenge: {
+                img:req.hostname + '/cup.png',
+                lugar:req.body.lugar,
+                rode:req.body.rode
+            }}},(err,response) => {
+        if(err) throw res.status(500).json({success:false});
+        res.status(200).json({success:true,data:response});
+    });
+};
+
+exports.updatePhoto = (req,res) => {
+    models.Hackathon.findOneAndUpdate({ _id: req.params.id }, { $set: { photoPerfil: req.body.photo } }, { new: true }, (err, response) => {
+        if(err) throw res.status(500).json({success:false});
+        res.status(200).json({success:true,data:response});
+    });
+};
+
+exports.updateBanner = (req,res) => {
+    models.Hackathon.findOneAndUpdate({ _id: req.params.id }, { $set: { banner: req.body.photo } }, { new: true }, (err, response) => {
+        if(err) throw res.status(500).json({success:false});
+        res.status(200).json({success:true,data:response});
+    });
+};
+
+exports.updateInfo = (req,res) => {
+    models.Hackathon.findOneAndUpdate({ _id: req.params.id }, { $set: {
+        place: req.body.place,
+        title: req.body.title,
+        titleLink: req.body.title.replaceAll(' ','-').toLowerCase(),
+        address: req.body.address,
+        date: req.body.date,
+        linkreserv: req.body.linkreserv,
+        overvies: req.body.overvies,
+        shedule: req.body.shedule
+    } }, { new: true }, (err, response) => {
+        if(err) throw res.status(500).json({success:false});
+        res.status(200).json({success:true,data:response});
+    });
+};

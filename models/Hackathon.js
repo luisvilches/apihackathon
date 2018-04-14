@@ -25,7 +25,7 @@ let Hackathon = new Schema({
     hakers:[
         {type:String,required:true}
     ],
-    administrators:[
+        administrators:[
         {type:String,required:true}
     ],
     judges:[
