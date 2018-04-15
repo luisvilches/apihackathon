@@ -28,9 +28,9 @@ router.get("/user/:id",ctrl.users.user);
 router.put("/user/update/:id",ctrl.users.updateInfoProfile);
 router.put("/user/set/password/:id",ctrl.users.setPassword);
 router.put("/user/set/avatar/:id",ctrl.users.setAvatar);
+router.post("/user/add/skill/:id", ctrl.users.addSkills);
 
 //tags
 router.post("/tags",ctrl.tags.createTag);
 router.get("/tags",ctrl.tags.tags);
-
 module.exports = router;

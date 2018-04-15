@@ -33,11 +33,20 @@ exports.user = (req,res) => {
 
 
 exports.updateInfoProfile = (req,res) => {
+    console.log(typeof req.body.skills , '=>', req.body.skills);
+    var tags = req.body.skills.split(',');
     Model.User.findOneAndUpdate({ _id: req.params.id }, { $set: {
             name: req.body.name,
             username: req.body.username.replaceAll(' ','-').toLowerCase(),
             location: req.body.location,
-            description: req.body.description
+            description: req.body.description,
+            socials:{
+                facebook:req.body.facebook,
+                twitter:req.body.twitter,
+                linkedin:req.body.linkedin,
+                other:req.body.other
+            },
+            skills:tags
         } }, { new: true }, (err, response) => {
         if(err) throw res.status(500).json({success:false});
         res.status(200).json({success:true,data:response});
@@ -68,3 +77,10 @@ exports.setAvatar = (req,res) => {
     });
 };
 
+exports.addSkills = (req,res) => {
+    /*Model.User.findOneAndUpdate({_id: req.params.id}, {$push: {skills: req.body.skills}},(err,response) => {
+        if(err) throw res.status(500).json({success:false});
+        res.status(200).json({success:true,data:response});
+    });*/
+    console.log(req.body.skills)
+};

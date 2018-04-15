@@ -5,7 +5,7 @@ const Schema = mongoose.Schema;
 let User = new Schema({
     name:{type:String,required:true},
     username:{type:String},
-    invite:[
+    skills:[
         {type:String}
     ],
     email:{type:String,required:true},
@@ -17,22 +17,10 @@ let User = new Schema({
     description:{type:String,default:''},
     location:{type:String,default:''},
     socials:{
-        facebook:{
-            name:{type:String},
-            url:{type:String}
-        },
-        twitter:{
-            name:{type:String},
-            url:{type:String}
-        },
-        linkedin:{
-            name:{type:String},
-            url:{type:String}
-        },
-        other:{
-            name:{type:String},
-            url:{type:String}
-        }
+        facebook:{type:String,default:''},
+        twitter:{type:String,default:''},
+        linkedin:{type:String,default:''},
+        other:{type:String,default:''}
     }
 
 });

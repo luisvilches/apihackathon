@@ -3,13 +3,7 @@ const timestamps = require('mongoose-timestamp');
 const Schema = mongoose.Schema;
 
 let Tags = new Schema({
-    tags:[
-        {type:String}
-    ]
+    tags:[{type:String,default:[]}]
 });
 
-Tags.plugin(timestamps,  {
-    createdAt: 'created_at',
-    updatedAt: 'updated_at'
-});
 module.exports = mongoose.model("Tags",Tags);

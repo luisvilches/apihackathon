@@ -3,7 +3,7 @@ const randomColor = require('../utils/randomColor');
 
 exports.createTag = (req,res) => {
     let tag = new Model.Tags({
-        tags: req.body.tag
+        tags: [req.body.tag]
     });
 
     tag.save((err,user) => {
