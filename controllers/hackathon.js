@@ -228,6 +228,12 @@ exports.updateBanner = (req,res) => {
 };
 
 exports.updateInfo = (req,res) => {
+    console.log(typeof req.body.type,JSON.parse(req.body.type));
+    console.log(typeof req.body.judges,JSON.parse(req.body.judges));
+    console.log(typeof req.body.prizes,JSON.parse(req.body.prizes));
+    console.log(typeof req.body.challenge,JSON.parse(req.body.challenge));
+    console.log(typeof req.body.type,JSON.parse(req.body.type));
+    console.log(req.body);
     models.Hackathon.findOneAndUpdate({ _id: req.params.id }, { $set: {
         place: req.body.place,
         title: req.body.title,
