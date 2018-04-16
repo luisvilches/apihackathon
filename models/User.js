@@ -21,7 +21,8 @@ let User = new Schema({
         twitter:{type:String,default:''},
         linkedin:{type:String,default:''},
         other:{type:String,default:''}
-    }
+    },
+    job:{type:String,default:'' }
 
 });
 

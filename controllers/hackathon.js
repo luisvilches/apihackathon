@@ -236,7 +236,12 @@ exports.updateInfo = (req,res) => {
         date: req.body.date,
         linkreserv: req.body.linkreserv,
         overvies: req.body.overvies,
-        shedule: req.body.shedule
+        shedule: req.body.shedule,
+        type: req.body.type,
+        judges:req.body.judges,
+        prize:req.body.prizes,
+        challenge:req.body.challenge,
+        patnerts:req.body.patnerts
     } }, { new: true }, (err, response) => {
         if(err) throw res.status(500).json({success:false});
         res.status(200).json({success:true,data:response});

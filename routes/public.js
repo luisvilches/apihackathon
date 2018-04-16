@@ -9,5 +9,6 @@ router.post('/login', body, ctrl.auth.auth);
 router.post('/register',body, ctrl.users.createUser);
 router.get("/hackathon/public", ctrl.hackathon.findPublish);
 router.post("/tags",ctrl.tags.createTag);
+router.post("/types",ctrl.types.createTypes);
 
 module.exports = router;

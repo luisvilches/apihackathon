@@ -31,6 +31,13 @@ exports.user = (req,res) => {
     })
 };
 
+exports.userAll = (req,res) => {
+    Model.User.find({},(err,response) => {
+        if(err) throw (res.json({success: false}));
+        res.status(200).json(response);
+    });
+} ;
+
 
 exports.updateInfoProfile = (req,res) => {
     console.log(typeof req.body.skills , '=>', req.body.skills);
