@@ -14,6 +14,7 @@ exports.createUser = (req,res) => {
         name: req.body.name,
         email: req.body.email,
         password: req.body.password,
+        role: req.body.role.toLowerCase(),
         avatar: 'https://ui-avatars.com/api/?size=1024&background='+randomColor()+'&color=fff&name='+req.body.name.charAt(0)+'+'+req.body.name.charAt(1)
     });
 

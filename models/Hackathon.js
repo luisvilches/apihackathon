@@ -16,36 +16,39 @@ let Hackathon = new Schema({
     public:{type:Boolean,default:false},
     banner:{type:String,default:'http://via.placeholder.com/230x230'},
     photoPerfil:{type:String,default:''},
-    type:[
-        {type:String}
-    ],
+    type:[],
     invite:[
         {type:String}
     ],
     hakers:[
         {type:String,required:true}
     ],
-        administrators:[
+    administrators:[
         {type:String,required:true}
     ],
     judges:[
         {
-            userId:{type:String,required:true},
-            name:{type:String,required:true},
-            job:{type:String,required:true}
+            title:String,
+            desc:String,
+            img:String,
+            idJudge:String
         }
     ],
     prizes:[
         {
-            img:{type:String},
-            lugar:{type:String,required:true},
-            rode:{type:Number,required:true}
+            title:{type:String},
+            description:{type:String}
         }
     ],
     challenge:[
         {
-            title:{type:String,required:true},
-            content:{type:String,required:true}
+            title:{type:String},
+            description:{type:String}
+        }
+    ],
+    critrials:[
+        {
+            text: {type:String}
         }
     ],
     patnerts:[{type:String,required:true}]

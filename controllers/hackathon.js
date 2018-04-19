@@ -20,7 +20,7 @@ exports.find = (req,res) => {
 };
 
 exports.create = (req,res) => {
-
+        console.log('==!>',req.body.type.split(","))
     let hackathon = new models.Hackathon({
         place: req.body.place,
         type:req.body.type.split(","),
@@ -33,6 +33,10 @@ exports.create = (req,res) => {
         overvies:req.body.overvies,
         shedule:req.body.shedule,
         userId:req.body.userId,
+        critrials:[],
+        judges:[],
+        prizes:[],
+        challenge:[],
         photoPerfil:'https://ui-avatars.com/api/?size=1024&background='+randomColor()+'&color=fff&name='+req.body.title.charAt(0),
         public:false
     });
@@ -221,19 +225,13 @@ exports.updateBanner = (req,res) => {
     } else {
         host = 'http://'+req.hostname;
     }
-    models.Hackathon.findOneAndUpdate({ _id: req.params.id }, { $set: { banner: req.body.photo } }, { new: true }, (err, response) => {
+    models.Hackathon.findOneAndUpdate({ _id: req.params.id }, { $set: { banner: host + '/' + uploadfile(req.files.photo,'hackaton_banner') } }, { new: true }, (err, response) => {
         if(err) throw res.status(500).json({success:false});
         res.status(200).json({success:true,data:response});
     });
 };
 
 exports.updateInfo = (req,res) => {
-    console.log(typeof req.body.type,JSON.parse(req.body.type));
-    console.log(typeof req.body.judges,JSON.parse(req.body.judges));
-    console.log(typeof req.body.prizes,JSON.parse(req.body.prizes));
-    console.log(typeof req.body.challenge,JSON.parse(req.body.challenge));
-    console.log(typeof req.body.type,JSON.parse(req.body.type));
-    console.log(req.body);
     models.Hackathon.findOneAndUpdate({ _id: req.params.id }, { $set: {
         place: req.body.place,
         title: req.body.title,
@@ -244,10 +242,11 @@ exports.updateInfo = (req,res) => {
         overvies: req.body.overvies,
         shedule: req.body.shedule,
         type: req.body.type,
-        judges:req.body.judges,
-        prize:req.body.prizes,
-        challenge:req.body.challenge,
-        patnerts:req.body.patnerts
+        judges:JSON.parse(req.body.judges),
+        critrials: JSON.parse(req.body.critrials),
+        prizes:JSON.parse(req.body.prizes),
+        challenge:JSON.parse(req.body.challenge),
+        //patnerts:req.body.patnerts
     } }, { new: true }, (err, response) => {
         if(err) throw res.status(500).json({success:false});
         res.status(200).json({success:true,data:response});
