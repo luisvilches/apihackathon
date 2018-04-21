@@ -54,7 +54,8 @@ exports.updateInfoProfile = (req,res) => {
                 linkedin:req.body.linkedin,
                 other:req.body.other
             },
-            skills:tags
+            skills:tags,
+            job:req.body.job
         } }, { new: true }, (err, response) => {
         if(err) throw res.status(500).json({success:false});
         res.status(200).json({success:true,data:response});

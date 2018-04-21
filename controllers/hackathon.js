@@ -2,6 +2,18 @@
 const models = require("../models");
 const randomColor = require('../utils/randomColor');
 const uploadfile = require('../utils/fileupload');
+const NodeGeocoder = require('node-geocoder');
+
+var options = {
+    provider: 'google',
+
+    // Optional depending on the providers
+    httpAdapter: 'https', // Default
+    apiKey: 'AIzaSyAyH_refWHI9X9fYQtu6WdKi8mMinrNfHU', // for Mapquest, OpenCage, Google Premier
+    formatter: null         // 'gpx', 'string', ...
+};
+
+var geocoder = NodeGeocoder(options);
 
 String.prototype.replaceAll = function(search, replacement) {
     var target = this;
@@ -20,7 +32,7 @@ exports.find = (req,res) => {
 };
 
 exports.create = (req,res) => {
-        console.log('==!>',req.body.type.split(","))
+
     let hackathon = new models.Hackathon({
         place: req.body.place,
         type:req.body.type.split(","),
@@ -40,11 +52,20 @@ exports.create = (req,res) => {
         photoPerfil:'https://ui-avatars.com/api/?size=1024&background='+randomColor()+'&color=fff&name='+req.body.title.charAt(0),
         public:false
     });
-    hackathon.save((err,response) => {
+
+    geocoder.geocode(req.body.address + ',' + req.body.place, function(err, response) {
         if(err){
             res.status(500).json({message:err});
         } else {
-            res.status(200).json({message:"Create success",data:response});
+            console.log(response);
+            hackathon.coordinates = response;
+            hackathon.save((err,response) => {
+                if(err){
+                    res.status(500).json({message:err});
+                } else {
+                    res.status(200).json({message:"Create success",data:response});
+                }
+            });
         }
     });
 };
@@ -232,6 +253,7 @@ exports.updateBanner = (req,res) => {
 };
 
 exports.updateInfo = (req,res) => {
+
     models.Hackathon.findOneAndUpdate({ _id: req.params.id }, { $set: {
         place: req.body.place,
         title: req.body.title,
@@ -246,7 +268,7 @@ exports.updateInfo = (req,res) => {
         critrials: JSON.parse(req.body.critrials),
         prizes:JSON.parse(req.body.prizes),
         challenge:JSON.parse(req.body.challenge),
-        //patnerts:req.body.patnerts
+        sponsors:JSON.parse(req.body.sponsor)
     } }, { new: true }, (err, response) => {
         if(err) throw res.status(500).json({success:false});
         res.status(200).json({success:true,data:response});

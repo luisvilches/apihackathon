@@ -16,11 +16,12 @@ let Hackathon = new Schema({
     public:{type:Boolean,default:false},
     banner:{type:String,default:'http://via.placeholder.com/230x230'},
     photoPerfil:{type:String,default:''},
+    coordinates:Array,
     type:[],
     invite:[
         {type:String}
     ],
-    hakers:[
+    hackers:[
         {type:String,required:true}
     ],
     administrators:[
@@ -51,7 +52,7 @@ let Hackathon = new Schema({
             text: {type:String}
         }
     ],
-    patnerts:[{type:String,required:true}]
+    sponsors:{type:Array,default:[]}
 
 });
 Hackathon.plugin(timestamps,  {
