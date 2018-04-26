@@ -4,10 +4,8 @@
     <list default="true" id="7dcbd00d-5cf0-4189-94cc-6194a73014f7" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/controllers/hackathon.js" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/hackathon.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controllers/users.js" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/users.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/models/Hackathon.js" beforeDir="false" afterPath="$PROJECT_DIR$/models/Hackathon.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/private.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/private.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -21,11 +19,29 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="hackathon.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="hackathon.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/controllers/hackathon.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="454">
-              <caret line="270" column="45" lean-forward="true" selection-start-line="270" selection-start-column="45" selection-end-line="270" selection-end-column="45" />
+            <state relative-caret-position="514">
+              <caret line="282" column="2" lean-forward="true" selection-start-line="282" selection-start-column="2" selection-end-line="282" selection-end-column="2" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Project.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/models/Project.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="285">
+              <caret line="19" column="5" selection-start-line="19" selection-start-column="5" selection-end-line="19" selection-end-column="5" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Tags.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/models/Tags.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="120">
+              <caret line="8" column="42" selection-start-line="8" selection-start-column="42" selection-end-line="8" selection-end-column="42" />
             </state>
           </provider>
         </entry>
@@ -33,8 +49,8 @@
       <file leaf-file-name="Hackathon.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/models/Hackathon.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="360">
-              <caret line="24" column="35" lean-forward="true" selection-start-line="24" selection-start-column="35" selection-end-line="24" selection-end-column="35" />
+            <state relative-caret-position="409">
+              <caret line="55" column="14" selection-start-line="55" selection-start-column="14" selection-end-line="55" selection-end-column="14" />
             </state>
           </provider>
         </entry>
@@ -42,26 +58,8 @@
       <file leaf-file-name="private.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/routes/private.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="476">
-              <caret line="34" column="18" selection-start-line="34" selection-start-column="14" selection-end-line="34" selection-end-column="18" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="types.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/controllers/types.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="15" column="13" selection-start-line="15" selection-start-column="8" selection-end-line="15" selection-end-column="13" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="tags.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/controllers/tags.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="315">
-              <caret line="21" lean-forward="true" selection-start-line="21" selection-end-line="21" />
+            <state relative-caret-position="386">
+              <caret line="28" column="40" lean-forward="true" selection-start-line="28" selection-start-column="40" selection-end-line="28" selection-end-column="40" />
             </state>
           </provider>
         </entry>
@@ -69,17 +67,8 @@
       <file leaf-file-name="User.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/models/User.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="360">
-              <caret line="24" column="32" selection-start-line="24" selection-start-column="32" selection-end-line="24" selection-end-column="32" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="users.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/controllers/users.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="320">
-              <caret line="57" column="28" selection-start-line="57" selection-start-column="28" selection-end-line="57" selection-end-column="28" />
+            <state relative-caret-position="270">
+              <caret line="18" column="4" selection-start-line="18" selection-start-column="4" selection-end-line="23" selection-end-column="6" />
             </state>
           </provider>
         </entry>
@@ -92,6 +81,14 @@
         <option value="JavaScript File" />
       </list>
     </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <replaceStrings>
+      <replace />
+    </replaceStrings>
+    <dirStrings>
+      <dir>$PROJECT_DIR$/models</dir>
+    </dirStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -118,12 +115,13 @@
         <option value="$PROJECT_DIR$/controllers/tags.js" />
         <option value="$PROJECT_DIR$/controllers/types.js" />
         <option value="$PROJECT_DIR$/routes/public.js" />
-        <option value="$PROJECT_DIR$/routes/private.js" />
         <option value="$PROJECT_DIR$/models/User.js" />
         <option value="$PROJECT_DIR$/models/Types.js" />
         <option value="$PROJECT_DIR$/controllers/users.js" />
+        <option value="$PROJECT_DIR$/routes/private.js" />
         <option value="$PROJECT_DIR$/controllers/hackathon.js" />
         <option value="$PROJECT_DIR$/models/Hackathon.js" />
+        <option value="$PROJECT_DIR$/models/Project.js" />
       </list>
     </option>
   </component>
@@ -136,8 +134,8 @@
   <component name="NodeModulesDirectoryManager">
     <handled-path value="$PROJECT_DIR$/node_modules" />
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="y" value="41" />
+  <component name="ProjectFrameBounds" extendedState="1">
+    <option name="y" value="22" />
     <option name="width" value="1280" />
     <option name="height" value="728" />
   </component>
@@ -220,21 +218,23 @@
       <workItem from="1523148524060" duration="1318000" />
       <workItem from="1523151332308" duration="127000" />
       <workItem from="1523296152980" duration="15654000" />
-      <workItem from="1523536698829" duration="50339000" />
+      <workItem from="1523536698829" duration="50549000" />
+      <workItem from="1524697820162" duration="3681000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="77372000" />
+    <option name="totallyTimeSpent" value="81263000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1" y="23" width="1280" height="728" extended-state="6" />
+    <frame x="0" y="22" width="1280" height="728" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
+      <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="bottom" id="Version Control" order="9" />
       <window_info anchor="bottom" id="Run" order="2" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -247,7 +247,6 @@
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Find" order="1" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -257,6 +256,55 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/controllers/hackathon.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4050">
+          <caret line="270" column="45" lean-forward="true" selection-start-line="270" selection-start-column="45" selection-end-line="270" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/models/Hackathon.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="24" column="35" lean-forward="true" selection-start-line="24" selection-start-column="35" selection-end-line="24" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/private.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="510">
+          <caret line="34" column="18" selection-start-line="34" selection-start-column="14" selection-end-line="34" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/controllers/types.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="15" column="13" selection-start-line="15" selection-start-column="8" selection-end-line="15" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/controllers/tags.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="21" lean-forward="true" selection-start-line="21" selection-end-line="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/models/User.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="24" column="32" selection-start-line="24" selection-start-column="32" selection-end-line="24" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/controllers/users.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="855">
+          <caret line="57" column="28" selection-start-line="57" selection-start-column="28" selection-end-line="57" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/controllers/hackathon.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
@@ -467,13 +515,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/models/Tags.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" column="45" lean-forward="true" selection-start-line="8" selection-start-column="45" selection-end-line="8" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/routes/public.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="165">
@@ -488,24 +529,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/models/User.js">
+    <entry file="file://$PROJECT_DIR$/utils/fileupload.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="24" column="32" selection-start-line="24" selection-start-column="32" selection-end-line="24" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/controllers/users.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="320">
-          <caret line="57" column="28" selection-start-line="57" selection-start-column="28" selection-end-line="57" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/routes/private.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="476">
-          <caret line="34" column="18" selection-start-line="34" selection-start-column="14" selection-end-line="34" selection-end-column="18" />
+        <state relative-caret-position="210">
+          <caret line="14" column="28" selection-start-line="14" selection-start-column="28" selection-end-line="14" selection-end-column="28" />
         </state>
       </provider>
     </entry>
@@ -523,24 +550,52 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/models/Hackathon.js">
+    <entry file="file://$PROJECT_DIR$/controllers/users.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="24" column="35" lean-forward="true" selection-start-line="24" selection-start-column="35" selection-end-line="24" selection-end-column="35" />
+        <state relative-caret-position="320">
+          <caret line="57" column="28" selection-start-line="57" selection-start-column="28" selection-end-line="57" selection-end-column="28" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/utils/fileupload.js">
+    <entry file="file://$PROJECT_DIR$/models/Tags.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="14" column="28" selection-start-line="14" selection-start-column="28" selection-end-line="14" selection-end-column="28" />
+        <state relative-caret-position="120">
+          <caret line="8" column="42" selection-start-line="8" selection-start-column="42" selection-end-line="8" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/private.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="386">
+          <caret line="28" column="40" lean-forward="true" selection-start-line="28" selection-start-column="40" selection-end-line="28" selection-end-column="40" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/controllers/hackathon.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="454">
-          <caret line="270" column="45" lean-forward="true" selection-start-line="270" selection-start-column="45" selection-end-line="270" selection-end-column="45" />
+        <state relative-caret-position="514">
+          <caret line="282" column="2" lean-forward="true" selection-start-line="282" selection-start-column="2" selection-end-line="282" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/models/Hackathon.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="409">
+          <caret line="55" column="14" selection-start-line="55" selection-start-column="14" selection-end-line="55" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/models/User.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="18" column="4" selection-start-line="18" selection-start-column="4" selection-end-line="23" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/models/Project.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="19" column="5" selection-start-line="19" selection-start-column="5" selection-end-line="19" selection-end-column="5" />
         </state>
       </provider>
     </entry>

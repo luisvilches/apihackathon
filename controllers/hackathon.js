@@ -262,7 +262,7 @@ exports.updateInfo = (req,res) => {
         date: req.body.date,
         linkreserv: req.body.linkreserv,
         overvies: req.body.overvies,
-        shedule: req.body.shedule,
+        shedule: JSON.parse(req.body.shedule),
         type: req.body.type,
         judges:JSON.parse(req.body.judges),
         critrials: JSON.parse(req.body.critrials),
@@ -270,6 +270,13 @@ exports.updateInfo = (req,res) => {
         challenge:JSON.parse(req.body.challenge),
         sponsors:JSON.parse(req.body.sponsor)
     } }, { new: true }, (err, response) => {
+        if(err) throw res.status(500).json({success:false});
+        res.status(200).json({success:true,data:response});
+    });
+};
+
+exports.join = (req,res) => {
+    models.Hackathon.findOneAndUpdate({_id: req.params.id}, {$push: {hackers: req.body.userId}},(err,response) => {
         if(err) throw res.status(500).json({success:false});
         res.status(200).json({success:true,data:response});
     });

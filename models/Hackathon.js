@@ -11,7 +11,7 @@ let Hackathon = new Schema({
     date:{type:String},
     linkreserv:{type:String},
     overvies:{type:String},
-    shedule:{type:String},
+    shedule:[],
     userId:{type:String},
     public:{type:Boolean,default:false},
     banner:{type:String,default:'http://via.placeholder.com/230x230'},
@@ -22,7 +22,7 @@ let Hackathon = new Schema({
         {type:String}
     ],
     hackers:[
-        {type:String,required:true}
+        {type:String}
     ],
     administrators:[
         {type:String,required:true}
@@ -52,7 +52,8 @@ let Hackathon = new Schema({
             text: {type:String}
         }
     ],
-    sponsors:{type:Array,default:[]}
+    sponsors:{type:Array,default:[]},
+    projects:[]
 
 });
 Hackathon.plugin(timestamps,  {

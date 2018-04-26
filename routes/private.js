@@ -22,6 +22,7 @@ router.post("/hackathon/add/prizes/:id", ctrl.hackathon.addPrizes);
 router.put("/hackathon/update/photo/:id", ctrl.hackathon.updatePhoto);
 router.put("/hackathon/update/banner/:id", ctrl.hackathon.updateBanner);
 router.put("/hackathon/update/info/:id", ctrl.hackathon.updateInfo);
+router.post("/hackathon/join/:id", ctrl.hackathon.join);
 
 //users
 router.get("/user/:id",ctrl.users.user);
