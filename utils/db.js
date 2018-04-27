@@ -1,3 +1,9 @@
-exports.connectionString = function(obj){
-    return 'mongodb://' + obj.user + ':' + obj.password + '@' + obj.host + ':' + obj.port + '/' + obj.name;
+const config = require('../settings');
+const db = process.env.DATABASE ? config.DATABASE.producction : config.DATABASE.development;
+exports.connectionString = function(){
+    if(db.provider === 'local'){
+        return 'mongodb://' + db.host +  '/' + db.name;
+    } else if(db.provider === 'mlab'){
+        return 'mongodb://' + db.user + ':' + db.password + '@' + db.host + ':' + db.port + '/' + db.name;
+    }
 };

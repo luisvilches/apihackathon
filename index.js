@@ -24,12 +24,12 @@ app.use(express.static(path.join(path.resolve(),'public/',config.SERVER.static_u
 app.use("/",body,routes);
 app.use("/auth",auth.auth,body,routesPrivates);
 
-mongoose.connect(utils.db.connectionString(config.DATABASE.default))
-    .then(() => {
+
+mongoose.connect(utils.db.connectionString()).then(() => {
         console.log('connect database server');
     }).catch(err => {
-    console.log(err);
-});
+        console.log(err);
+    });
 
 
 app.listen(config.SERVER.port, err => {

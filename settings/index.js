@@ -12,26 +12,21 @@ module.exports = {
         }
     },
     DATABASE:{
-        default:{
+        development:{
             name:"hackathon",
             user:"hackathon",
             password:"hackathon",
             port:"33769",
-            host:"ds233769.mlab.com"
-        },
-        development:{
-            name:"",
-            user:"",
-            password:"",
-            port:"",
-            host:""
+            host:"ds233769.mlab.com",
+            provider:"mlab"
         },
         producction:{
-            name:"",
+            name:"hackathon",
             user:"",
             password:"",
             port:"",
-            host:""
+            host:"localhost",
+            provider:"local"
         }
     }
 };
