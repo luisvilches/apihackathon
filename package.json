@@ -4,7 +4,7 @@
   "description": "Web service Hackathon.io",
   "main": "index.js",
   "scripts": {
-    "start": "node index"
+    "start": "DATBASE=production node index"
   },
   "author": "Luis vilches Abarca",
   "license": "ISC",

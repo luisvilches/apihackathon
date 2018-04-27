@@ -1,5 +1,5 @@
 const config = require('../settings');
-const db = process.env.DATABASE ? config.DATABASE.producction : config.DATABASE.development;
+const db = process.env.DATABASE === 'production' ? config.DATABASE.producction : config.DATABASE.development;
 exports.connectionString = function(){
     if(db.provider === 'local'){
         return 'mongodb://' + db.host +  '/' + db.name;
