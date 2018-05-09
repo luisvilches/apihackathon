@@ -4,12 +4,13 @@ const Schema = mongoose.Schema;
 
 let Projects = new Schema({
     name:String,
+    titleLink:String,
     hackathonId:String,
+    stract:String,
     hackers:[],
     description:String,
     feedback:String,
     website:String,
-    stract:String,
     skills:[],
     image:String,
     socials:{

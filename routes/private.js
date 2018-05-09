@@ -24,6 +24,18 @@ router.put("/hackathon/update/banner/:id", ctrl.hackathon.updateBanner);
 router.put("/hackathon/update/info/:id", ctrl.hackathon.updateInfo);
 router.post("/hackathon/join/:id", ctrl.hackathon.join);
 
+//projects
+
+router.get("/project", ctrl.projects.find);
+router.post("/project/create", ctrl.projects.create);
+router.get("/project/id/:id", ctrl.projects.findById);
+router.get("/project/url/:link", ctrl.projects.findOne);
+router.get("/project/idfind/:id", ctrl.projects.findOneHack);
+router.delete("/project/:id", ctrl.projects.delete);
+router.post("/project/join/:id", ctrl.projects.join);
+router.put("/project/update/photo/:id", ctrl.projects.updatePhoto);
+router.put("/project/update/info/:id", ctrl.projects.updateInfo);
+
 //users
 router.get("/user/:id",ctrl.users.user);
 router.get("/users",ctrl.users.userAll);
@@ -37,4 +49,6 @@ router.post("/tags",ctrl.tags.createTag);
 router.get("/tags",ctrl.tags.tags);
 router.post("/types",ctrl.types.createTypes);
 router.get("/types",ctrl.types.types);
+
+
 module.exports = router;
