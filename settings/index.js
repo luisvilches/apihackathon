@@ -21,12 +21,12 @@ module.exports = {
             provider:"mlab"
         },
         producction:{
-            name:"hackathon",
-            user:"",
-            password:"",
-            port:"",
-            host:"localhost",
-            provider:"local"
+            name:"hackathon-prod",
+            user:"admin",
+            password:"admin",
+            port:"61890",
+            host:"ds161890.mlab.com",
+            provider:"mlab"
         }
     }
 };
